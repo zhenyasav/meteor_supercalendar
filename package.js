@@ -1,8 +1,8 @@
 Package.describe({
-  name: "gabrielhpugliese:supercalendar",
-  summary: "Google Calendar-like as smart package",
+  name: "zhenya:supercalendar",
+  summary: "SuperCalendar",
   version: "0.7.1",
-  git: "https://github.com/gabrielhpugliese/meteor_supercalendar"
+  git: "https://github.com/zhenyasav/meteor_supercalendar"
 });
 
 Package.onUse(function (api, where) {
@@ -21,7 +21,8 @@ Package.onUse(function (api, where) {
     'jquery',
     'less',
   ], 'client');
-  api.add_files([
+
+  api.addFiles([
     'client/lib/app.js',
     'client/stylesheets/calendar.less',
     'client/stylesheets/fullcalendar.css',
@@ -30,7 +31,8 @@ Package.onUse(function (api, where) {
     'client/views/calendar.html',
     'client/views/calendar.js'
   ], 'client');
-  api.add_files([
+
+  api.addFiles([
     'client/compatibility/fullcalendar.js',
     'client/compatibility/jquery-ui-1.10.3.custom.js'
   ], 'client', {raw: true});
@@ -38,14 +40,15 @@ Package.onUse(function (api, where) {
   // Both
   api.use([
     'underscore'
-  ], ['client', 'server']);
-  api.add_files([
+  ]);
+
+  api.addFiles([
     'lib/models.js',
     'lib/forms.js'
-  ], ['client', 'server']);
+  ]);
 
   if (typeof api.export !== 'undefined') {
-    api.export('Calendar', ['client', 'server']);
+    api.export('Calendar');
     api.export('SuperCalendar', ['client']);
   }
 
