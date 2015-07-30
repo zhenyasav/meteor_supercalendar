@@ -5,6 +5,11 @@ Package.describe({
   git: "https://github.com/zhenyasav/meteor_supercalendar"
 });
 
+Npm.depends({
+  'googleapis': '2.1.1',
+  'google-auth-library': '0.9.6'
+});
+
 Package.onUse(function (api, where) {
   api.versionsFrom('METEOR@0.9.2');
 
@@ -39,7 +44,9 @@ Package.onUse(function (api, where) {
 
   // Both
   api.use([
-    'underscore'
+    'underscore',
+    'mongo',
+    'coffeescript'
   ]);
 
   api.addFiles([
@@ -47,8 +54,13 @@ Package.onUse(function (api, where) {
     'lib/forms.js'
   ]);
 
+  api.addFiles([
+    'server/gcal.coffee'
+    ], 'server')
+
   if (typeof api.export !== 'undefined') {
     api.export('Calendar');
+    api.export('GoogleCalendarAdapter', ['server']);
     api.export('SuperCalendar', ['client']);
   }
 

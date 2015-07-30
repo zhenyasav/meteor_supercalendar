@@ -1,7 +1,7 @@
 Meteor SuperCalendar
 ================
 
-Smart package for SuperCalendar. Google Calendar-like as smart package
+Smart package for SuperCalendar. Forked from gabrielhpugliese:supercalendar.
 
 ## Demo
 
@@ -11,7 +11,7 @@ http://supercalendar.meteor.com
 
 To install in a new project:
 ```bash
-> meteor add gabrielhpugliese:supercalendar
+> meteor add zhenya:supercalendar
 ```
 
 ## Quick Start
