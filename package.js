@@ -54,10 +54,15 @@ Package.onUse(function (api, where) {
     'lib/forms.js'
   ]);
 
+
+  // Google Calendar integration
+  api.use(['service-configuration'], 'server');
+
   api.addFiles([
     'server/gcal.coffee'
-    ], 'server')
-
+    ], 'server');
+  // end Google Calendar integration
+  
   if (typeof api.export !== 'undefined') {
     api.export('Calendar');
     api.export('GoogleCalendarAdapter', ['server']);
