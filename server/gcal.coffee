@@ -33,3 +33,5 @@ Meteor.methods
 		, (err, response) ->
 			return console.log 'calendar api error', err if err
 			console.log 'calendar api response', response
+
+			
