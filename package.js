@@ -13,9 +13,14 @@ Npm.depends({
 Package.onUse(function (api, where) {
   api.versionsFrom('METEOR@0.9.2');
 
-  // Other packages
-  api.use('copleykj:mesosphere@0.1.14');
-  api.use('anti:modals@0.4.0');
+  api.use([
+    'underscore',
+    'mongo',
+    'coffeescript',
+    'matb33:collection-hooks',
+    'copleykj:mesosphere@0.1.14',
+    'anti:modals@0.4.0']);
+  
   // Client
   api.use([
     'startup',
@@ -24,7 +29,7 @@ Package.onUse(function (api, where) {
     'tracker',
     'preserve-inputs',
     'jquery',
-    'less',
+    'less'
   ], 'client');
 
   api.addFiles([
@@ -42,15 +47,10 @@ Package.onUse(function (api, where) {
     'client/compatibility/jquery-ui-1.10.3.custom.js'
   ], 'client', {raw: true});
 
-  // Both
-  api.use([
-    'underscore',
-    'mongo',
-    'coffeescript'
-  ]);
+
 
   api.addFiles([
-    'lib/models.js',
+    'lib/models.coffee',
     'lib/forms.js'
   ]);
 
